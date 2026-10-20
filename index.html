@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Una sorpresita para vos ❤️</title>
+
+    <!-- Archivos CSS -->
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/pantallas.css">
+    <link rel="stylesheet" href="css/detalles.css">
+    <link rel="stylesheet" href="css/carta.css">
+
+    <!-- Archivo JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- PRIMERA PANTALLA -->
+    <main class="bienvenida">
+
+        <p class="subtitulo">PARA ALGUIEN MUY ESPECIAL</p>
+
+        <h1>Para vos, mamá ❤️</h1>
+
+        <p class="mensaje">
+            Aveces no alcanzo a expresar todo lo que siento, y pienso que hay momentos en los que un simple "te quiero"
+            no es suficiente.
+            asi que decidí hacer algo especial para vos.
+            Estuve pensando como podia agradecerte y se me ocurrio la idea de hacerte esta sorpresita, para que sepas
+            lo mucho que te quiero y lo importante que sos para mi.
+            Siempre hay cosas que me cuestan decir, y siento que esta es una forma especial de demostrártelas.
+            espero te guste esto que preparé con mucho amor.
+        </p>
+
+        <button id="botonSorpresa" type="button">
+            Preparé algo para vos. ➡
+        </button>
+
+    </main>
+
+
+    <!-- SEGUNDA PANTALLA -->
+    <main class="sorpresa" id="pantallaSorpresa" hidden>
+
+        <p class="subtitulo">CON MUCHO AMOR</p>
+
+        <!-- Destellos decorativos -->
+        <div class="destellos" aria-hidden="true">
+            <span class="destello destello1">✦</span>
+            <span class="destello destello2">✧</span>
+            <span class="destello destello3">✦</span>
+            <span class="destello destello4">✧</span>
+            <span class="destello destello5">✦</span>
+            <span class="destello destello6">✧</span>
+        </div>
+
+        <h1>Esto es para vos, mamá ❤️</h1>
+
+        <!-- Flores decorativas -->
+        <div class="flores" aria-hidden="true">
+            <span class="flor flor1">🌷</span>
+            <span class="flor flor2">🌸</span>
+            <span class="flor flor3">🌷</span>
+        </div>
+
+        <p class="mensaje">
+            No siempre encuentro las palabras para expresar lo que siento, así que preparé esta pequeña carta para vos,
+            con mucho cariño.
+        </p>
+
+        <!-- Botón para mostrar el sobre -->
+        <button id="botonCarta" type="button">
+            Recibir mi carta ✉️
+        </button>
+
+        <!-- CONTENEDOR DEL SOBRE -->
+        <div id="sobreContenedor" hidden>
+
+            <p class="textoSobre">
+
+            </p>
+
+            <!-- Sobre que se puede abrir -->
+            <button id="sobre" type="button" aria-label="Abrir la carta">
+                <span class="sobreBase"></span>
+                <span class="sobreTapa"></span>
+                <span class="sello">♥</span>
+            </button>
+
+            <p id="indicacionSobre">
+                Tocá la carta para abrirla 💌
+            </p>
+
+            <!-- CARTA -->
+            <div id="carta" hidden>
+
+                <h2>Unas palabras para vos 💌</h2>
+
+                <p>
+                    Mamá, quiero que sepas lo importante
+                    que sos para mí.
+                </p>
+
+                <p>
+                    Gracias por estar siempre a mi lado, por tu cariño,
+                    por tu paciencia y por todos esos pequeños
+                    detalles que hacen que cada día sea mejor.<br>
+                    Aunque a veces no compartamos mucho tiempo juntos,
+                    los momentos que paso con vos me hacen muy feliz,
+                    aunque quizás no siempre se note.
+                </p>
+
+                <p>
+                    A veces me cuesta expresar lo que siento,
+                    pero quiero que sepas que valoro muchísimo cada momento que compartimos.<br>
+                    Quizás no te lo diga tan seguido como debería,
+                    pero estoy muy agradecido de tenerte en mi vida.<br>
+                    Gracias por todo lo que hacés por mí,
+                    incluso por esas cosas pequeñas que a veces no llego a reconocer como debería.
+                </p>
+
+                <p>
+                    No soy muy bueno expresando mis sentimientos,
+                    pero quería aprovechar esta oportunidad para decirte cuánto te quiero y lo importante que sos para
+                    mí.
+                </p>
+                <p>
+                    Gracias por todo mamá. ❤️
+                </p>
+
+                <button id="botonCerrarCarta" type="button">
+                    Cerrar la carta. 💌
+                </button>
+
+            </div>
+            <p id="fraseFinal" hidden>
+                Siempre voy a estar agradecido por todo lo que haces por mi, mami.
+                Te quiero muchísimo. ❤️🫂
+            </p>
+        </div>
+
+        <!-- Botón para volver al inicio -->
+        <button id="botonInicio" type="button">
+            ↩ Volver al inicio
+        </button>
+
+    </main>
+
+    <!-- Firmita -->
+    <footer class="firma">
+        Hecho por Matías Estévez.
+    </footer>
+
+</body>
+
+</html>

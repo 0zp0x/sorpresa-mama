@@ -1,0 +1,80 @@
+/* ESTILOS GENERALES */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100svh;
+    background: linear-gradient(135deg,
+            #fff4f5,
+            #f5dce5,
+            #fbe9df);
+    font-family: Georgia, serif;
+    color: #704455;
+    overflow-x: hidden;
+}
+
+/* Textos pequeños decorativos */
+.subtitulo {
+    margin-bottom: 22px;
+    color: #a66c83;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+/* Títulos principales */
+h1 {
+    margin: 0 0 22px;
+    font-size: clamp(30px, 8vw, 42px);
+    font-weight: normal;
+}
+
+/* Mensajes principales */
+.mensaje {
+    margin-bottom: 30px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* Accesibilidad: respetar la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* FIRMA DEL CREADOR */
+
+.firma {
+    position: fixed;
+    right: 18px;
+    bottom: 14px;
+    z-index: 10;
+
+    color: #98546e;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    font-style: italic;
+
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 600px) {
+    .firma {
+        right: 10px;
+        bottom: 8px;
+        font-size: 10px;
+    }
+}

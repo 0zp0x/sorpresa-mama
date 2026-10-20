@@ -1,0 +1,372 @@
+/* CARTA PARA MAMÁ */
+
+/* Botón que permite abrir la carta */
+#botonCarta {
+    padding: 13px 24px;
+    border: 1px solid #b66f89;
+    border-radius: 30px;
+    background: #fff8fa;
+    color: #98546e;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#botonCarta:hover {
+    background: #f8e1e9;
+    transform: translateY(-2px);
+}
+
+/* Contenedor de la carta */
+#carta {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 16px;
+    background: rgba(255, 248, 250, 0.9);
+    text-align: left;
+    animation: aparecerCarta 1s ease forwards;
+}
+
+/* Título de la carta */
+#carta h2 {
+    text-align: center;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+/* Texto de la carta */
+#carta p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Aparición suave */
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SOBRE DE LA CARTA */
+
+#sobreContenedor {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.textoSobre {
+    margin-bottom: 22px;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* Forma principal del sobre */
+#sobre {
+    position: relative;
+    display: block;
+    width: 220px;
+    height: 145px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    perspective: 600px;
+}
+
+/* Cuerpo del sobre */
+.sobreBase {
+    position: absolute;
+    inset: 0;
+    background: #dba2b7;
+    border: 1px solid #c886a0;
+    border-radius: 5px;
+    clip-path: polygon(0 0,
+            50% 55%,
+            100% 0,
+            100% 100%,
+            0 100%);
+}
+
+/* Tapa triangular que se abre */
+.sobreTapa {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: #edbfd0;
+    clip-path: polygon(0 0, 100% 0, 50% 60%);
+    transform-origin: top center;
+    transition: transform 0.8s ease;
+}
+
+/* Corazón del centro */
+.sello {
+    position: absolute;
+    z-index: 3;
+    top: 52%;
+    left: 50%;
+    color: #fff8fa;
+    font-size: 30px;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+}
+
+/* Animación al abrir el sobre */
+#sobre.abierto .sobreTapa {
+    transform: rotateX(180deg);
+}
+
+#sobre.abierto .sello {
+    opacity: 0;
+}
+
+/* Indicación para abrirlo */
+#indicacionSobre {
+    margin: 18px 0 25px;
+    color: #a66c83;
+    font-size: 14px;
+}
+
+/* La carta aparece dentro del contenedor */
+#carta {
+    margin-top: 25px;
+    padding: 22px;
+    border: 1px solid #f0d4df;
+    border-radius: 18px;
+    background: rgba(255, 248, 250, 0.95);
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(112, 68, 85, 0.1);
+    animation: aparecerCarta 1s ease forwards;
+}
+
+#carta h2 {
+    margin-top: 0;
+    color: #98546e;
+    text-align: center;
+    font-size: 23px;
+    font-weight: normal;
+}
+
+#carta p {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* Aparición suave de la carta */
+@keyframes aparecerCarta {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Efecto suave al pasar el cursor */
+@media (hover: hover) {
+    #sobre:not(.abierto):hover {
+        transform: translateY(-3px);
+    }
+}
+
+/* ADAPTACIÓN DE LA CARTA */
+
+/* Evitamos que el contenido se desborde */
+#sobreContenedor,
+#carta {
+    max-width: 100%;
+    min-width: 0;
+}
+
+/* Texto de la carta */
+#carta {
+    overflow-wrap: break-word;
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+    #carta {
+        padding: 18px;
+        margin-top: 20px;
+    }
+
+    #carta h2 {
+        font-size: 21px;
+        line-height: 1.4;
+    }
+
+    #carta p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .textoSobre {
+        font-size: 16px;
+    }
+
+    #indicacionSobre {
+        font-size: 13px;
+    }
+}
+
+/* Ajustes para celulares pequeños */
+@media (max-width: 360px) {
+    #carta {
+        padding: 14px;
+    }
+
+    #carta h2 {
+        font-size: 19px;
+    }
+
+    #carta p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+
+/* Botón para cerrar la carta */
+#botonCerrarCarta {
+    display: block;
+    margin: 0 auto 18px;
+    padding: 10px 18px;
+
+    border: 1px solid #b66f89;
+    border-radius: 25px;
+
+    background: #fff8fa;
+    color: #98546e;
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#botonCerrarCarta:hover {
+    background: #f8e1e9;
+    transform: translateY(-2px);
+}
+
+/* FRASE FINAL PARA MAMÁ */
+
+#fraseFinal {
+    margin: 24px 0 8px;
+    color: #98546e;
+    font-size: 17px;
+    line-height: 1.8;
+    font-style: italic;
+    text-align: center;
+    animation: aparecerCarta 1.2s ease forwards;
+}
+
+/* ACABADO ELEGANTE */
+
+/* Carta más refinada */
+#carta {
+    border: 1px solid rgba(214, 150, 175, 0.45);
+    box-shadow:
+        0 8px 25px rgba(112, 68, 85, 0.08),
+        0 2px 6px rgba(112, 68, 85, 0.04);
+}
+
+/* Título de la carta */
+#carta h2 {
+    letter-spacing: 0.3px;
+}
+
+/* Botones con transiciones suaves */
+#botonCarta,
+#botonCerrarCarta,
+#botonInicio {
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Efecto al pasar el cursor */
+@media (hover: hover) {
+
+    #botonCarta:hover,
+    #botonCerrarCarta:hover,
+    #botonInicio:hover {
+        box-shadow: 0 5px 14px rgba(152, 84, 110, 0.15);
+    }
+}
+
+/* Respuesta al tocar botones */
+#botonCarta:active,
+#botonCerrarCarta:active,
+#botonInicio:active {
+    transform: scale(0.97);
+}
+
+/* Indicador visible de teclado */
+#botonCarta:focus-visible,
+#botonCerrarCarta:focus-visible,
+#botonInicio:focus-visible,
+#sobre:focus-visible {
+    outline: 3px solid #c58b48;
+    outline-offset: 4px;
+}
+
+/* FRASE FINAL DESPUÉS DE LA LLUVIA */
+/* APARICIÓN SUAVE DE LA FRASE */
+
+#fraseFinal {
+    margin: 28px auto 12px;
+    padding: 20px 12px;
+
+    color: #98546e;
+    font-size: 19px;
+    line-height: 1.9;
+    font-style: italic;
+    text-align: center;
+
+    opacity: 0;
+    transform: translateY(12px);
+    filter: blur(2px);
+
+    transition:
+        opacity 1.8s ease-out,
+        transform 1.8s ease-out,
+        filter 0.5s ease-out;
+}
+
+#fraseFinal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+
+#fraseFinal.visible {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+}
+
+@keyframes fraseAparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

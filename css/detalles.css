@@ -1,0 +1,335 @@
+/* DETALLES Y DECORACIONES */
+
+/* Botón principal */
+#botonSorpresa {
+    padding: 15px 24px;
+    border: none;
+    border-radius: 30px;
+    background: #b66f89;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#botonSorpresa:hover {
+    background: #98546e;
+    transform: translateY(-2px);
+}
+
+#botonSorpresa:disabled {
+    cursor: default;
+}
+
+/* Flores */
+.flores {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin: 30px 0;
+}
+
+/* Aparición y movimiento de las flores */
+.flor {
+    display: inline-block;
+    font-size: 48px;
+    opacity: 0;
+    animation:
+        aparecerFlor 1s ease forwards,
+        balanceo 2s ease-in-out infinite;
+}
+
+.flor1 {
+    animation-delay: 0.3s, 1.3s;
+}
+
+.flor2 {
+    font-size: 60px;
+    animation-delay: 0.9s, 1.9s;
+}
+
+.flor3 {
+    animation-delay: 1.5s, 2.5s;
+}
+
+@keyframes aparecerFlor {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes balanceo {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+/* Destellos */
+.destellos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 15px 0;
+}
+
+.destello {
+    display: inline-block;
+    color: #c58b48;
+    font-size: 22px;
+    animation: brillar 2s ease-in-out infinite;
+}
+
+.destello2 {
+    font-size: 16px;
+    animation-delay: 0.4s;
+}
+
+.destello3 {
+    animation-delay: 0.8s;
+}
+
+.destello4 {
+    font-size: 18px;
+    animation-delay: 1.2s;
+}
+
+.destello5 {
+    font-size: 17px;
+    animation-delay: 0.6s;
+}
+
+.destello6 {
+    animation-delay: 1s;
+}
+
+@keyframes brillar {
+
+    0%,
+    100% {
+        opacity: 0.25;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(20deg);
+    }
+}
+
+/* Pétalos en forma de corazón */
+.petalo {
+    position: fixed;
+    top: -30px;
+    z-index: 5;
+    pointer-events: none;
+    color: #d98ca8;
+    opacity: 0;
+    animation: caerPetalo 6s linear forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes caerPetalo {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -10px, 0) rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    85% {
+        opacity: 0.7;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(45px, 105vh, 0) rotate(300deg);
+    }
+}
+
+/* Ajustes para celulares pequeños */
+@media (max-width: 360px) {
+    .flores {
+        gap: 10px;
+    }
+
+    .flor {
+        font-size: 40px;
+    }
+
+    .flor2 {
+        font-size: 50px;
+    }
+}
+
+/* Desactivar pétalos si se solicita menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .petalo {
+        animation: none;
+        display: none;
+    }
+}
+
+/* AJUSTES PARA CELULARES */
+
+@media (max-width: 600px) {
+
+    /* Botón de la primera pantalla */
+    #botonSorpresa,
+    #botonCarta {
+        max-width: 100%;
+        padding: 13px 18px;
+        font-size: 14px;
+    }
+
+    /* Flores más pequeñas */
+    .flores {
+        gap: 12px;
+        margin: 22px 0;
+    }
+
+    .flor {
+        font-size: 40px;
+    }
+
+    .flor2 {
+        font-size: 50px;
+    }
+
+    /* Destellos más juntos */
+    .destellos {
+        gap: 22px;
+    }
+
+    /* Sobre adaptable al ancho disponible */
+    #sobre {
+        width: min(220px, 100%);
+        height: auto;
+        aspect-ratio: 220 / 145;
+    }
+}
+
+/* Ajustes adicionales para celulares pequeños */
+@media (max-width: 360px) {
+
+    .flores {
+        gap: 8px;
+    }
+
+    .flor {
+        font-size: 34px;
+    }
+
+    .flor2 {
+        font-size: 44px;
+    }
+
+    .destellos {
+        gap: 16px;
+    }
+
+    .subtitulo {
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+}
+
+/* BOTÓN VOLVER AL INICIO */
+
+#botonInicio {
+    display: block;
+    margin: 28px auto 0;
+    padding: 12px 22px;
+
+    border: 1px solid #b66f89;
+    border-radius: 30px;
+
+    background: #fff8fa;
+    color: #98546e;
+
+    font-family: Georgia, serif;
+    font-size: 14px;
+
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+#botonInicio:hover {
+    background: #f8e1e9;
+    transform: translateY(-2px);
+}
+
+/* LLUVIA ESPECIAL DE CORAZONES */
+
+.corazon-especial {
+    position: fixed;
+    top: -60px;
+    z-index: 9999;
+    pointer-events: none;
+
+    color: #e75480;
+    text-shadow: 0 0 12px rgba(231, 84, 128, 0.5);
+
+    opacity: 0;
+    animation: lluviaEspecial 5s ease-in forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes lluviaEspecial {
+    0% {
+        opacity: 0;
+        transform: translateY(0) rotate(0deg) scale(0.7);
+    }
+
+    12% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateY(110vh) rotate(540deg) scale(1.3);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .corazon-especial {
+        animation: none;
+        display: none;
+    }
+}
+
+/* Desvanecimiento suave al terminar la lluvia */
+.corazon-especial.terminando {
+    animation: desvanecerCorazon 2.5s ease-out forwards !important;
+}
+
+@keyframes desvanecerCorazon {
+    from {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(40px) scale(0.6);
+    }
+}
